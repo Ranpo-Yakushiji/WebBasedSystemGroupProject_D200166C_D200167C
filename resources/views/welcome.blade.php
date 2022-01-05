@@ -25,7 +25,7 @@
     }
 
     .game{
-        padding: 30px;
+        padding: 35px;
         margin-left: auto;
         margin-right: auto;
     }
