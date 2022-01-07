@@ -44,14 +44,14 @@
         
     }
 
-    .category{
+    .game{
         
         background-image: url('{{ asset('images/wallpaper.jpeg') }}');
         background-size: cover;
     }
 </style>
 
-<div class="container-fluid category">
+<div class="container-fluid game">
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12 mx-auto form">
             <h2 class="category-title">Create New Game</h2>

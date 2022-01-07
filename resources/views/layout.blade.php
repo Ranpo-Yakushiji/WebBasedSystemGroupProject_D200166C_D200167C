@@ -5,7 +5,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    
+                <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        
         <style>
             .nav-link{
                 padding: 15px 70px;
@@ -32,6 +36,25 @@
                 padding:40px;
             }
 
+            .search input.form-control[type=search]:focus:not([readonly]){
+                
+                border-bottom: 1px solid #ce93d8;
+                box-shadow: 0 1px 0 0 #ce93d8;
+            }
+
+            .search input.form-control[type=search]{
+                
+                border:none;
+                border-bottom: 1px solid silver;
+                border-radius: 0;
+            }
+
+            .search input[type="search"]::placeholder{
+                position: relative;
+                right: 4px;
+
+            }
+
         </style>
     </head>
     <body>
@@ -54,10 +77,10 @@
                     <a class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Home</a>
+                    <a class="nav-link">Game Recommend</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Home</a>
+                    <a class="nav-link">Game Developer</a>
                 </li>
                 @if (Route::has('login'))
                 <li class="nav-item hidden fixed right">
@@ -74,6 +97,14 @@
                 </li>
                 @endif
             </ul> 
+            <!-- Search form -->
+            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0 search" action="{{route('search.game')}}" method="POST">
+            @CSRF
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-sm ml-3 w-75" type="search" placeholder="Search"
+                aria-label="Search" name="keyword">
+            </form>
+        </div>
     </nav>
     @yield('content')
 

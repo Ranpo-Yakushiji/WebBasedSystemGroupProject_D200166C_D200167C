@@ -45,6 +45,10 @@ Route::get('editGame/{id}',[App\Http\Controllers\GameController::class,'edit'])-
 
 Route::post('/updateGame',[App\Http\Controllers\GameController::class,'update'])->name('updateGame');
 
+Route::get('/games',[App\Http\Controllers\GameController::class,'viewGame'])->name('games');
+
+Route::post('/games',[App\Http\Controllers\GameController::class,'searchGame'])->name('search.game');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

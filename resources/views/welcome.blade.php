@@ -96,12 +96,12 @@
 </div>
 <!--/.Carousel Wrapper-->
 <br>
-    <div class="intro text-center mx-auto">
+    <div class="intro mx-auto container-fluid">
         <div class="row game">
-            <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <img src="{{asset('images/DreamChaser.png')}}" class="img-fluid">
             </div>
-            <div class="col-lg-7 col-md-7 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <h2 class="title-intro">Game Introduction</h2>
                 <p class="text-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
                 <button class="more">Learn More</button>

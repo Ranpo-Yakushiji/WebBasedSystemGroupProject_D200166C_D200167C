@@ -82,4 +82,24 @@ class GameController extends Controller
 
         Return redirect()->route('showGame');
     }
+
+    public function viewGame(){
+        $viewGame=DB::table('games')
+        ->leftjoin('categories', 'categories.id', '=', 'games.CategoryID')
+        ->select('games.*', 'categories.name as categoryName')
+        ->get();
+        return view('viewGame')->with('games', $viewGame);
+    }
+
+    public function searchGame(){
+
+        $r=request();
+        $keyword=$r->keyword;  
+        $games=DB::table('games')
+        ->where('games.name', 'like', '%'.$keyword.'%')
+        ->leftjoin('categories', 'categories.id', '=', 'games.CategoryID')
+        ->select('games.*', 'categories.name as categoryName')
+        ->get();
+        return view('viewGame')->with('games', $games);
+    }
 }
