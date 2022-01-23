@@ -2,9 +2,61 @@
 @section('content')
 <style>
 
+    .category-title{
+        text-align: center;
+        padding: 25px;
+    }
+
+    .add{
+        text-align: center;
+    }
+
+    .add button{
+        padding: 10px 30px;
+        margin: 20px;
+    }
+
+    input[type=text], input[type=number], input[type=date], input[type=file]{
+        width: 70%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom: 8px;
+    }
+
+    .textarea{
+        width: 70%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .form{
+        
+        box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .form{
+        margin-top: 80px;
+        margin-bottom: 80px;
+        background-color: white;
+        border-radius: 8px;
+        padding: 13px;
+        
+    }
+
+    .game{
+        
+        background-image: url('{{ asset('images/wallpaper.jpeg') }}');
+        background-size: cover;
+    }
+
+    .img{
+        margin-left: 80px
+    }
 </style>
 
-<div class="container-fluid category">
+
+<div class="container-fluid game">
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12 mx-auto form">
             <h2 class="category-title">Edit Game Details</h2>
@@ -34,7 +86,7 @@
                     <textarea class="form-control textarea" id="gameDescription" name="gameDescription"  rows="6">{{$game->description}}</textarea>
                 </div>
                 <div class="form-group">
-                    <img src="{{asset('images')}}/{{$game->image}}" alt="" class="img-fluid" width="100">
+                    <img src="{{asset('images')}}/{{$game->image}}" alt="" class="img-fluid img" width="100">
                     <input type="file" class="form-control" id="gameImage" name="gameImage">
                 </div>
                 <div class="form-group">

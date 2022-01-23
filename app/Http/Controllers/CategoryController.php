@@ -9,6 +9,7 @@ use Session;
 
 class CategoryController extends Controller
 {
+
     public function add(){
         $r=request();
         $addCategory=Category::create([

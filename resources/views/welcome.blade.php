@@ -5,19 +5,10 @@
         max-height: 700px;
     }
 
-    .more{
+    .game button{
         padding:12px 20px;
-        border-left: 4px solid #87cefa;
-        border-right: none;
-        border-top: none;
-        border-bottom: none;
-        background-color: transparent;
+        margin-bottom: 20px;
         margin-top: 20px;
-    }
-
-    .more:hover{
-        background: #87cefa;
-        transition: background-color 1000ms linear;
     }
 
     .intro{  
@@ -28,14 +19,16 @@
         padding: 35px;
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .text-intro{
-        padding: 20px;
+        text-align:center;
     }
 
     .title-intro{
         padding-bottom: 15px;
+    }
+
+    .game img{
+      max-width:600px;
+      max-height:600px;
     }
 
 </style>
@@ -57,27 +50,27 @@
         alt="First slide">
         <div class="carousel-caption">
         <h3 class="h3-responsive">Upcoming Game</h3>
-        <p>First text</p>
+        <p style="opacity: 0.7;">Paper Bridge 3 Internation Server</p>
       </div>
     </div>
     <!--/First slide-->
     <!--Second slide-->
     <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('images/DreamChaser.png')}}"
+      <img class="d-block w-100" src="{{asset('images/stray.jpeg')}}"
         alt="Second slide">
         <div class="carousel-caption">
         <h3 class="h3-responsive">Upcoming Game</h3>
-        <p>First text</p>
+        <p style="opacity: 0.7;">Stray</p>
       </div>
     </div>
     <!--/Second slide-->
     <!--Third slide-->
     <div class="carousel-item">
-      <img class="d-block w-100" src="{{asset('images/paperdoll3.jpg')}}"
+      <img class="d-block w-100" src="{{asset('images/cat-cafe-manager.jpeg')}}"
         alt="Third slide">
         <div class="carousel-caption">
         <h3 class="h3-responsive">Upcoming Game</h3>
-        <p>First text</p>
+        <p style="opacity: 0.7;">Cat Cafe Manager</p>
       </div>
     </div>
     <!--/Third slide-->
@@ -96,15 +89,17 @@
 </div>
 <!--/.Carousel Wrapper-->
 <br>
-    <div class="intro mx-auto container-fluid">
+    <div class="container-fluid">
         <div class="row game">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <img src="{{asset('images/DreamChaser.png')}}" class="img-fluid">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img src="{{asset('images/gameicon1.png')}}" class="img-fluid">
+                <h2 class="title-intro">Game Recommendation</h2>
+                <a href="{{ route('games')}}"><button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Know more</button></a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <h2 class="title-intro">Game Introduction</h2>
-                <p class="text-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
-                <button class="more">Learn More</button>
+              <img src="{{asset('images/developericon1.png')}}" class="img-fluid">
+                <h2 class="title-intro">Developer Introduction</h2>
+                <a href="{{route('developers')}}"><button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Know more</button></a>
             </div>
         </div>
     </div>

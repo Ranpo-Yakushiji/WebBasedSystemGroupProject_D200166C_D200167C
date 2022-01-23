@@ -1,7 +1,47 @@
 @extends('layout')
 @section('content')
 <style>
-    
+
+    .category-title{
+        text-align: center;
+        padding: 25px;
+    }
+
+    .add{
+        text-align: center;
+    }
+
+    .add button{
+        padding: 10px 30px;
+        margin: 20px;
+    }
+
+    input[type=text] {
+        width: 70%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .form{
+        
+        box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .form{
+        margin-top: 200px;
+        margin-bottom: 200px;
+        background-color: white;
+        border-radius: 8px;
+        padding: 13px;
+        
+    }
+
+    .category{
+        
+        background-image: url('{{ asset('images/wallpaper.jpeg') }}');
+        background-size: cover;
+    }
 </style>
 
 <div class="container-fluid category">

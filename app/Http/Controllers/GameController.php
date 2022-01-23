@@ -7,9 +7,11 @@ use DB;
 use App\Models\Game;
 use App\Models\Category;
 use Session;
+use Auth;
 
 class GameController extends Controller
 {
+
     public function add(){
         $r=request();
         $image=$r->file('gameImage');
@@ -80,7 +82,7 @@ class GameController extends Controller
         $games->DeveloperID=$r->DeveloperID;
         $games->save();
 
-        Return redirect()->route('showGame');
+        return redirect()->route('showGame');
     }
 
     public function viewGame(){
@@ -88,7 +90,15 @@ class GameController extends Controller
         ->leftjoin('categories', 'categories.id', '=', 'games.CategoryID')
         ->select('games.*', 'categories.name as categoryName')
         ->get();
-        return view('viewGame')->with('games', $viewGame);
+        $viewComment=DB::table('comments')
+        ->leftjoin('users','users.id','=','comments.userID')
+        ->select('comments.*','users.name as userName')->get();
+        return view('viewGame')->with('games', $viewGame)->with('comments',$viewComment);
+    }
+
+    public function gameDetail($id){
+        $games=Game::all()->where('id',$id);
+        return view('gameDetails')->with('games',$games);
     }
 
     public function searchGame(){
@@ -100,6 +110,9 @@ class GameController extends Controller
         ->leftjoin('categories', 'categories.id', '=', 'games.CategoryID')
         ->select('games.*', 'categories.name as categoryName')
         ->get();
-        return view('viewGame')->with('games', $games);
+        $viewComment=DB::table('comments')
+        ->leftjoin('users','users.id','=','comments.userID')
+        ->select('comments.*','users.name as userName')->get();
+        return view('viewGame')->with('games', $games)->with('comments',$viewComment);
     }
 }

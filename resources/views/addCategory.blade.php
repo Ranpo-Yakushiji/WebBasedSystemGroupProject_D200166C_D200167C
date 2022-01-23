@@ -1,9 +1,6 @@
 @extends('layout')
 @section('content')
 <style>
-    .form{
-        
-    }
 
     .category-title{
         text-align: center;
